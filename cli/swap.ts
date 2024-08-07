@@ -72,19 +72,6 @@ const swapToken = async (
       })
       .remainingAccounts(swapInstruction.keys)
       .instruction(),
-    // await program.methods
-    //   .swapToSol(swapInstruction.data)
-    //   .accounts({
-    //     programAuthority: programAuthority,
-    //     programWsolAccount: programWSOLAccount,
-    //     userAccount: wallet.publicKey,
-    //     solMint: NATIVE_MINT,
-    //     jupiterProgram: jupiterProgramId,
-    //     tokenProgram: TOKEN_PROGRAM_ID,
-    //     systemProgram: SystemProgram.programId,
-    //   })
-    //   .remainingAccounts(swapInstruction.keys)
-    //   .instruction(),
   ]
 
   const blockhash = (await connection.getLatestBlockhash()).blockhash
@@ -144,15 +131,4 @@ const swapToken = async (
     addressLookupTableAddresses
   )
   // // We have now both the instruction and the lookup table addresses.
-  // const {
-  //   computeBudgetInstructions, // The necessary instructions to setup the compute budget.
-  //   swapInstruction, // The actual swap instruction.
-  //   addressLookupTableAddresses, // The lookup table addresses that you can use if you are using versioned transaction.
-  // } = result
-
-  // await swapToSol(
-  //   computeBudgetInstructions,
-  //   swapInstruction,
-  //   addressLookupTableAddresses
-  // )
 })()
